@@ -32,8 +32,8 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     SystemName=OnePlus9R
 
 # Local release signing keys
-PRODUCT_DEFAULT_DEV_CERTIFICATE := /root/android-certs/releasekey
-PRODUCT_OTA_PUBLIC_KEYS := /root/android-certs/releasekey.x509.pem
-PRODUCT_EXTRA_RECOVERY_KEYS := /root/android-certs/releasekey.x509.pem
+PRODUCT_DEFAULT_DEV_CERTIFICATE := vendor/local-certs/releasekey
+PRODUCT_OTA_PUBLIC_KEYS := vendor/local-certs/releasekey
+PRODUCT_EXTRA_RECOVERY_KEYS := vendor/local-certs/releasekey
 
 -include vendor/lineage-priv/keys/keys.mk
