@@ -31,9 +31,11 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     SystemDevice=OnePlus9R \
     SystemName=OnePlus9R
 
-# Local release signing keys
+# Use local release keys only when present; otherwise fall back to default test keys.
+ifneq ($(wildcard vendor/local-certs/releasekey.pk8),)
 PRODUCT_DEFAULT_DEV_CERTIFICATE := vendor/local-certs/releasekey
 PRODUCT_OTA_PUBLIC_KEYS := vendor/local-certs/releasekey
 PRODUCT_EXTRA_RECOVERY_KEYS := vendor/local-certs/releasekey
+endif
 
 -include vendor/lineage-priv/keys/keys.mk
